@@ -6,16 +6,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import {MatButtonModule} from '@angular/material';
+import {MatDialogModule} from '@angular/material/dialog';
+import { OsDataComponent } from './components/os-data/os-data.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    OsDataComponent
   ],
+  entryComponents:[OsDataComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
