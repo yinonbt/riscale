@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import {MatButtonModule} from '@angular/material';
 import {MatDialogModule} from '@angular/material/dialog';
 import { OsDataComponent } from './components/os-data/os-data.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { OsDataComponent } from './components/os-data/os-data.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

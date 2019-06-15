@@ -23,7 +23,6 @@ for(let i=0; i< 100; i++) {
 }
 
 app.use(express.json());
-
 // Post url: http://localhost:8088/devices
 /* Body:
 {
@@ -84,6 +83,7 @@ app.post( "/devices", ( req, res ) => {
         });
     }
     res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     res.json(newDevices.slice(skip, skip + take));
 } );
 
