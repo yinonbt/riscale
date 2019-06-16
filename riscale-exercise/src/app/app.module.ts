@@ -7,13 +7,18 @@ import { AppComponent } from './app.component';
 
 import {MatButtonModule} from '@angular/material';
 import {MatDialogModule} from '@angular/material/dialog';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
 import { OsDataComponent } from './components/os-data/os-data.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LoaderInterceptor } from './interceptors/loader-interceptor';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    OsDataComponent
+    OsDataComponent,
+    LoaderComponent
   ],
   entryComponents:[OsDataComponent],
   imports: [
@@ -22,9 +27,10 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     MatButtonModule,
     MatDialogModule,
+    MatProgressSpinnerModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

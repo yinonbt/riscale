@@ -14,10 +14,10 @@ export class AppComponent {
 
   onFacelClick() {
     this.hostPickerService.getDevices();
-    const dialogRef = this.dialog.open(OsDataComponent, {
-      width: '600px',
-      data:{}
-    });
+    // const dialogRef = this.dialog.open(OsDataComponent, {
+    //   width: '600px',
+    //   data:{}
+    // });
 
   }
 }
