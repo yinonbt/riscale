@@ -1,7 +1,9 @@
 const express = require("express");
+var cors = require('cors')
 const _ = require("lodash");
 
 const app = express();
+app.use(cors());
 const port = 8088; // default port to listen
 
 const names = ['Lemuel','Jae','Rhett','Douglas','Marc','Floyd','Darrel','Major','David','August','Sebastian','Wesley','Ezekiel','Palmer','Dwain','Donn','Maynard','Wilford','Henry','Nigel','Vern','Royce','Abel','Miles','Rod','Anderson','Bo','Chang','Mark','Darryl','Tyree','Kris','Gregorio','Ambrose','Leonel','Fausto','Brain','Bobby','Peter','Ahmad','Buddy','Deshawn','Waylon','Alberto','Curt','Jamar','Damon','Richie','Walton','Rico','Mimi','Anjanette','Cherelle','Teodora','Amie','Belva','Stefania','Tamekia','Yuette','Hildegard','Tia','Skye','Sherril','Amparo','Wilma','Sherita','Angella','Katherin','Ardis','Susy','Samatha','Taisha','Ryann','Lorina','Nelda','Yasmin','Keeley','Oda','Anneliese','Graciela','Gwenda','Esperanza','Magda','Gertie','Earlie','Lynell','Rachel','Maya','Tereasa','Erlene','Amee','Shandi','Kelli','Irina','Carolyn','Hortensia','Yang','Vannessa','Danuta','Teena'];
@@ -21,6 +23,12 @@ function addDevice(host) {
 for(let i=0; i< 100; i++) {
     addDevice(names[i] + '-PC');
 }
+
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
 
 app.use(express.json());
 // Post url: http://localhost:8088/devices
