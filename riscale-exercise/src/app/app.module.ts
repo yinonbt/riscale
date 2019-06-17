@@ -1,13 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import {MatButtonModule} from '@angular/material';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatCardModule } from '@angular/material/card';
 
 import { OsDataComponent } from './components/os-data/os-data.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -24,7 +25,7 @@ import { EnumToArrayPipe } from './pipes/enum-to-array.pipe';
     HostPickerRootComponent,
     EnumToArrayPipe
   ],
-  entryComponents:[OsDataComponent],
+  entryComponents: [OsDataComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -32,9 +33,12 @@ import { EnumToArrayPipe } from './pipes/enum-to-array.pipe';
     MatButtonModule,
     MatDialogModule,
     MatProgressSpinnerModule,
+    MatCardModule,
     HttpClientModule
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,10 +1,10 @@
-import { Injectable } from "@angular/core";
-import { ApiService } from "./api.service";
-import { BehaviorSubject } from "rxjs";
-import { Device } from "../models/device";
+import { Injectable } from '@angular/core';
+import { ApiService } from './api.service';
+import { BehaviorSubject } from 'rxjs';
+import { Device } from '../models/device';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class HostPickerService {
   tracks$ = new BehaviorSubject<Device[]>([]);
@@ -14,12 +14,12 @@ export class HostPickerService {
   getDevices() {
     this.apiService.fetchDevices().subscribe(
       devices => {
-        console.log("devices: ", devices);
-        console.log("JSON devices: ", JSON.stringify(devices));
+        console.log('devices: ', devices);
+        console.log('JSON devices: ', JSON.stringify(devices));
         this.tracks$.next(devices);
       },
       error => {
-        alert("Server problems. See console");
+        alert('Server problems. See console');
         console.log(error);
       }
     );

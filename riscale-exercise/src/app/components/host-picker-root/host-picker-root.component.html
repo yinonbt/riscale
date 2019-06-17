@@ -1,7 +1,4 @@
-<p>
-  host-picker-root works!
-</p>
-<div *ngFor="let item of osTypes | enumToArray">
+<div *ngFor="let item of osTypes | enumToArray" class="os-data-container">
   <app-os-data [osType]="item"></app-os-data>
 </div>
 
