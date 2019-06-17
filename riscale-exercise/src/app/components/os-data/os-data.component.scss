@@ -1,16 +1,23 @@
 .os-card {
   width: 500px;
   min-height: 100px;
+  display: flex;
+  margin-top: 10px;
+
   .titles-container {
-      width: 30%;
-      margin-top: 10px;
-      margin-left: 10px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: flex-start;
-      span {
-          font-weight: bold;
-      }
+    width: 30%;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    span {
+      font-weight: bold;
+    }
+  }
+
+  .hosts-container {
+    display: flex;
   }
 }

@@ -9,6 +9,7 @@ import { MatButtonModule } from '@angular/material';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatCardModule } from '@angular/material/card';
+import {MatMenuModule} from '@angular/material/menu';
 
 import { OsDataComponent } from './components/os-data/os-data.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -16,6 +17,7 @@ import { LoaderInterceptor } from './interceptors/loader-interceptor';
 import { LoaderComponent } from './components/loader/loader.component';
 import { HostPickerRootComponent } from './components/host-picker-root/host-picker-root.component';
 import { EnumToArrayPipe } from './pipes/enum-to-array.pipe';
+import { DeviceSelectorComponent } from './components/device-selector/device-selector.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { EnumToArrayPipe } from './pipes/enum-to-array.pipe';
     OsDataComponent,
     LoaderComponent,
     HostPickerRootComponent,
-    EnumToArrayPipe
+    EnumToArrayPipe,
+    DeviceSelectorComponent
   ],
   entryComponents: [OsDataComponent],
   imports: [
@@ -33,6 +36,7 @@ import { EnumToArrayPipe } from './pipes/enum-to-array.pipe';
     MatButtonModule,
     MatDialogModule,
     MatProgressSpinnerModule,
+    MatMenuModule,
     MatCardModule,
     HttpClientModule
   ],
