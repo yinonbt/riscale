@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { OsType } from 'src/app/models/os-type.enum';
 
 @Component({
   selector: 'app-os-data',
@@ -6,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./os-data.component.scss']
 })
 export class OsDataComponent implements OnInit {
-
+  @Input() osType: string;
+  
   constructor() { }
 
   ngOnInit() {

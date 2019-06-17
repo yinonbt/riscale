@@ -13,12 +13,16 @@ import { OsDataComponent } from './components/os-data/os-data.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoaderInterceptor } from './interceptors/loader-interceptor';
 import { LoaderComponent } from './components/loader/loader.component';
+import { HostPickerRootComponent } from './components/host-picker-root/host-picker-root.component';
+import { EnumToArrayPipe } from './pipes/enum-to-array.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     OsDataComponent,
-    LoaderComponent
+    LoaderComponent,
+    HostPickerRootComponent,
+    EnumToArrayPipe
   ],
   entryComponents:[OsDataComponent],
   imports: [
