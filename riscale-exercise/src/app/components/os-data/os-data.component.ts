@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { OsType } from 'src/app/models/os-type.enum';
+import { MatMenuTrigger } from '@angular/material';
 
 @Component({
   selector: 'app-os-data',
@@ -7,6 +8,7 @@ import { OsType } from 'src/app/models/os-type.enum';
   styleUrls: ['./os-data.component.scss']
 })
 export class OsDataComponent implements OnInit {
+  @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
   @Input() osType: string;
   
   constructor() { }
@@ -14,4 +16,7 @@ export class OsDataComponent implements OnInit {
   ngOnInit() {
   }
 
+  onCloseRequested() {
+    this.trigger.closeMenu();
+  }
 }

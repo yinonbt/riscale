@@ -5,11 +5,11 @@
   <div class="hosts-container">
     <span>Hosts:</span>
     <div class="devices-container">
-      <button  mat-button [matMenuTriggerFor]="menu">
+      <button  mat-icon-button [matMenuTriggerFor]="menu">
         <i class="material-icons">add</i>
       </button>
       <mat-menu #menu="matMenu">
-        <app-device-selector></app-device-selector>
+        <app-device-selector (closeRequested)="onCloseRequested()"></app-device-selector>
       </mat-menu>
     </div>
   </div>
