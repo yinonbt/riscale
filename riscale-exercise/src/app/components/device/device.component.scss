@@ -1,0 +1,25 @@
+.device-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  .host-container {
+    font-weight: bold;
+  }
+
+  .ip-osName-container {
+    font-size: 12px;
+    height: 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.device-container:hover {
+  background-color: lightblue;
+  cursor: default;
+}
