@@ -3,8 +3,10 @@ import {
   OnInit,
   ViewEncapsulation,
   Output,
-  EventEmitter
+  EventEmitter,
+  Input
 } from "@angular/core";
+import { Device } from 'src/app/models/device';
 
 @Component({
   selector: "app-device-selector",
@@ -13,6 +15,7 @@ import {
   encapsulation: ViewEncapsulation.None
 })
 export class DeviceSelectorComponent implements OnInit {
+  @Input() devices: Device[];
   @Output() closeRequested = new EventEmitter();
 
   constructor() {}

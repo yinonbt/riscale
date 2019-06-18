@@ -4,5 +4,9 @@
       <i class="material-icons">clear</i>
     </button>
   </div>
-  <div></div>
+  <div>
+    <div *ngFor="let device of devices">
+      <app-device [device]="device"></app-device>
+    </div>
+  </div>
 </div>

@@ -18,6 +18,7 @@ import { LoaderComponent } from './components/loader/loader.component';
 import { HostPickerRootComponent } from './components/host-picker-root/host-picker-root.component';
 import { EnumToArrayPipe } from './pipes/enum-to-array.pipe';
 import { DeviceSelectorComponent } from './components/device-selector/device-selector.component';
+import { DeviceComponent } from './components/device/device.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { DeviceSelectorComponent } from './components/device-selector/device-sel
     LoaderComponent,
     HostPickerRootComponent,
     EnumToArrayPipe,
-    DeviceSelectorComponent
+    DeviceSelectorComponent,
+    DeviceComponent
   ],
   entryComponents: [OsDataComponent],
   imports: [

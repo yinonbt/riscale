@@ -4,10 +4,13 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'enumToArray'
 })
 export class EnumToArrayPipe implements PipeTransform {
-
-  transform(data: Object) {
+  transform(data: object) {
     const keys = Object.keys(data);
-    return keys.slice(keys.length / 2);
+    const offset = keys.length / 2;
+    const arr = [];
+    for (let i = 0; i < offset; i++) {
+      arr[i] = { key: Number(keys[i]), value: keys[i + offset] };
+    }
+    return arr;
   }
-
 }

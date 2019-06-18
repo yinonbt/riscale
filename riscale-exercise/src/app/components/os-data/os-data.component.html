@@ -1,15 +1,15 @@
 <mat-card class="os-card">
   <div class="titles-container">
-    <span>{{osType}}</span>
+    <span>{{osTypeValue}}</span>
   </div>
   <div class="hosts-container">
     <span>Hosts:</span>
     <div class="devices-container">
-      <button  mat-icon-button [matMenuTriggerFor]="menu">
+      <button  mat-icon-button [matMenuTriggerFor]="menu" (click)="onOpenRequested()">
         <i class="material-icons">add</i>
       </button>
       <mat-menu #menu="matMenu">
-        <app-device-selector (closeRequested)="onCloseRequested()"></app-device-selector>
+        <app-device-selector [devices]="devices$ | async" (closeRequested)="onCloseRequested()"></app-device-selector>
       </mat-menu>
     </div>
   </div>

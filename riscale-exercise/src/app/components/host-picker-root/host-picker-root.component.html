@@ -1,4 +1,4 @@
 <div *ngFor="let item of osTypes | enumToArray" class="os-data-container">
-  <app-os-data [osType]="item"></app-os-data>
+  <app-os-data [osTypeKey]="item.key" [osTypeValue]="item.value"></app-os-data>
 </div>
 
