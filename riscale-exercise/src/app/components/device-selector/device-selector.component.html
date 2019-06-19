@@ -6,7 +6,7 @@
   </div>
   <div>
     <div *ngFor="let device of devices" class="device-iterator">
-      <app-device [device]="device"></app-device>
+      <app-device [device]="device" (deviceSelected)="onDeviceSelected($event)"></app-device>
     </div>
   </div>
 </div>

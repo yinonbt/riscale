@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Device } from 'src/app/models/device';
 
 @Component({
@@ -8,9 +8,15 @@ import { Device } from 'src/app/models/device';
 })
 export class DeviceComponent implements OnInit {
   @Input() device: Device;
+  @Output() deviceSelected = new EventEmitter<Device>();
+
   constructor() { }
 
   ngOnInit() {
+    
   }
 
+  onClick() {
+    this.deviceSelected.emit(this.device);
+  }
 }

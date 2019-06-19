@@ -17,6 +17,7 @@ import { Device } from 'src/app/models/device';
 export class DeviceSelectorComponent implements OnInit {
   @Input() devices: Device[];
   @Output() closeRequested = new EventEmitter();
+  @Output() deviceSelected = new EventEmitter<Device>();
 
   constructor() {}
 
@@ -28,5 +29,9 @@ export class DeviceSelectorComponent implements OnInit {
 
   onCloseClick() {
     this.closeRequested.emit();
+  }
+
+  onDeviceSelected(selectedDevice: Device) {
+    this.deviceSelected.emit(selectedDevice);
   }
 }
