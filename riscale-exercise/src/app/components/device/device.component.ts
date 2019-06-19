@@ -8,6 +8,7 @@ import { Device } from 'src/app/models/device';
 })
 export class DeviceComponent implements OnInit {
   @Input() device: Device;
+  @Input() isSelected: boolean;
   @Output() deviceSelected = new EventEmitter<Device>();
 
   constructor() { }

@@ -1,4 +1,6 @@
-<div class="device-container" (click)="onClick()">
+<div class="device-container" (click)="onClick()" [ngClass]="{
+  'device-selected': isSelected
+}">
   <div class="host-container">
     {{device.host}}
   </div>
