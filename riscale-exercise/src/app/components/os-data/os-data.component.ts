@@ -1,5 +1,5 @@
 import { HostPickerService } from './../../services/host-picker.service';
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material';
 import { Device } from 'src/app/models/device';
 import { Observable, BehaviorSubject } from 'rxjs';
@@ -46,6 +46,13 @@ export class OsDataComponent implements OnInit {
   onDeviceSelected(selectedDevice: Device) {
     if (!this.selectedDevices.find(device => device.id === selectedDevice.id)) {
       this.selectedDevices.push(selectedDevice);
+    }
+  }
+
+  removeDevice(device: Device) {
+    const index = this.selectedDevices.indexOf(device, 0);
+    if (index > -1) {
+      this.selectedDevices.splice(index, 1);
     }
   }
 }

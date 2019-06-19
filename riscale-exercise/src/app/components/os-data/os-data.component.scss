@@ -19,10 +19,22 @@
 
   .hosts-container {
     display: flex;
+
     .devices-container {
+      width: 200px;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
+      align-items: flex-start;
+      margin-left: 10px;
+
+      .selected-device-container {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
     }
   }
 }

@@ -5,7 +5,12 @@
   <div class="hosts-container">
     <span>Hosts:</span>
     <div class="devices-container">
-      <div *ngFor="let selectedDevice of selectedDevices">{{selectedDevice.host}}</div>
+      <div *ngFor="let selectedDevice of selectedDevices" class="selected-device-container">
+        <span>{{selectedDevice.host}}</span>
+        <button mat-icon-button [matMenuTriggerFor]="menu" (click)="removeDevice(selectedDevice)">
+          <i class="material-icons">remove</i>
+        </button>
+      </div>
       <button mat-icon-button [matMenuTriggerFor]="menu" (click)="onOpenRequested()">
         <i class="material-icons">add</i>
       </button>
